@@ -1,0 +1,33 @@
+<h1>Users</h1>
+
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= user.username %>
+    </li>
+    <li>
+      <%= user.password %>
+    </li>
+    <li>
+      <ul>
+      <% user.posts.each do |post| %>
+      <li>
+        <%= post.title %>
+      </li>
+      <li>
+        <%= post.body %>
+      </li>
+      <% end %>
+        </ul>
+    </li>
+    <li>
+      <ul>
+        <% user.comments.each do |comment| %>
+          <li>
+            <%= comment.body %>
+          </li>
+        <% end %>
+      </ul>
+    </li>
+  <% end %>
+</ul>
